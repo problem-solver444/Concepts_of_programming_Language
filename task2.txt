@@ -1,0 +1,21 @@
+books = {}
+
+print("Enter 'Book Title - Days Borrowed'. Type 'done' to stop.")
+
+while True:
+    record = input(" ")
+    if record == 'done':
+        break
+    title, days = record.split(" - ")
+    books[title] = books.get(title, 0) + int(days)  # Add days to existing or new book
+
+if not books:
+    print("No data entered.") 
+else:
+    most_borrowed = max(books, key=books.get)
+    least_borrowed = min(books, key=books.get)
+    average_days = sum(books.values()) / len(books)
+
+    print(f"Most Borrowed Book: {most_borrowed} ({books[most_borrowed]} days)")
+    print(f"Least Borrowed Book: {least_borrowed} ({books[least_borrowed]} days)")
+    print(f"Average Borrowing Days: {average_days:.2f}")

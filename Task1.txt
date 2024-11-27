@@ -1,0 +1,18 @@
+steps_input = input("Enter the steps for each day separated by spaces: ").strip().split()
+steps = []
+for step in steps_input:
+        steps.append(int(step))
+    
+highest = max(steps)
+lowest = min(steps)
+    
+average = sum(steps) / len(steps)
+    
+sorted_steps = sorted(steps, reverse=True)
+    
+print("\n--- Daily Steps Tracker ---")
+print(f"Highest Step Count: {highest}")
+print(f"Lowest Step Count: {lowest}")
+print(f"Average Step Count: {average:.2f}")
+print(f"Steps in Descending Order: {sorted_steps}")
+
